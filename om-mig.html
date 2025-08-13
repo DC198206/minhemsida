@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <title>DC Digital Support & Säkerhet | Om mig</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    nav a:hover { color: #ff6600; }
+    .button.primary { background:#ff6600; color:white; padding:0.7rem 1.5rem; border-radius:4px; text-decoration:none; display:inline-block; }
+    .inner p { font-size: 1.1rem; line-height: 1.6; }
+  </style>
+</head>
+<body class="is-preload">
+  <div id="page-wrapper">
+
+    <!-- Header -->
+    <header id="header" class="alt">
+      <h1><a href="index.html">DC Digital Support & Säkerhet</a></h1>
+      <nav>
+        <a href="#menu">Meny</a>
+      </nav>
+    </header>
+
+    <!-- Meny -->
+    <nav id="menu">
+      <div class="inner">
+        <h2>Meny</h2>
+        <ul class="links">
+          <li><a href="index.html">Hem</a></li>
+          <li><a href="tjanster.html">Tjänster</a></li>
+          <li><a href="ommig.html">Om mig</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+        <a href="#" class="close">Stäng</a>
+      </div>
+    </nav>
+
+    <!-- Banner -->
+    <section id="banner">
+      <div class="inner">
+        <h2>Om mig</h2>
+        <p>Bakgrunden och erfarenheten bakom DC Digital Support & Säkerhet</p>
+      </div>
+    </section>
+
+    <!-- Om mig -->
+    <section id="wrapper">
+
+      <section class="wrapper spotlight style1">
+        <div class="inner">
+          <h2 class="major" style="text-align:center;">Vem jag är</h2>
+          <p>Jag har en utbildning i <strong>IT-forensik och informationssäkerhet</strong> från Högskolan i Halmstad och över 6 års yrkeserfarenhet inom IT-säkerhet. Mitt arbete har gett mig en djup förståelse för digitala hot, hur man förebygger dem och hur man hjälper människor att känna sig trygga i sin digitala vardag.</p>
+        </div>
+      </section>
+
+      <section class="wrapper spotlight style2">
+        <div class="inner">
+          <h2 class="major" style="text-align:center;">Praktisk erfarenhet</h2>
+          <p>Jag har bred praktisk kunskap inom <strong>reparationer av datorer, mobiltelefoner och kringutrustning</strong>. Det innefattar allt från skärm- och batteribyten till felsökning av hårdvara och mjukvara, samt optimering av prestanda.</p>
+        </div>
+      </section>
+
+      <section class="wrapper alt style3">
+        <div class="inner" style="text-align:center;">
+          <h2 class="major">Min passion</h2>
+          <p>Jag brinner för att göra teknik enkelt och tryggt för alla. Jag erbjuder även föreläsningar, bland annat om hur man kan undvika nätbedrägerier och öka sin digitala säkerhet.</p>
+          <a href="kontakt.html" class="button primary">Kontakta mig</a>
+        </div>
+      </section>
+
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="inner">
+        <p>&copy; 2025 DC Digital Support & Säkerhet. Alla rättigheter förbehållna.</p>       
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- Meny-funktion -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const menu = document.getElementById("menu");
+      const openBtn = document.querySelector("#header nav a");
+      const closeBtn = document.querySelector("#menu .close");
+
+      openBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+        menu.classList.add("visible");
+      });
+
+      closeBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+        menu.classList.remove("visible");
+      });
+    });
+  </script>
+</body>
+</html>

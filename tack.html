@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <title>Tack för ditt meddelande – DC Digital Support & Säkerhet</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    nav a:hover { color: #ff6600; }
+    #thankyou {
+      text-align: center;
+      padding: 4rem 1rem;
+    }
+    .checkmark {
+      width: 100px;
+      height: 100px;
+      display: inline-block;
+      stroke-width: 2;
+      stroke: #4CAF50;
+      fill: none;
+      stroke-miterlimit: 10;
+    }
+    .checkmark circle {
+      stroke-dasharray: 314;
+      stroke-dashoffset: 314;
+      animation: drawCircle 1s ease-out forwards;
+    }
+    .checkmark path {
+      stroke-dasharray: 70;
+      stroke-dashoffset: 70;
+      animation: drawCheck 0.5s ease-out forwards;
+      animation-delay: 1s;
+    }
+    @keyframes drawCircle { to { stroke-dashoffset: 0; } }
+    @keyframes drawCheck { to { stroke-dashoffset: 0; } }
+    #thankyou h2 { margin-top: 1rem; font-size: 2rem; }
+    #thankyou p { font-size: 1.1rem; margin-bottom: 2rem; }
+    #thankyou a.button {
+      background: #ff6600; color: white; padding: 0.8rem 1.5rem;
+      text-decoration: none; border-radius: 4px; font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    #thankyou a.button:hover { background: #e65c00; }
+  </style>
+</head>
+<body class="is-preload">
+
+  <div id="page-wrapper">
+
+    <!-- Header -->
+    <header id="header" class="alt">
+      <h1><a href="index.html">DC Digital Support & Säkerhet</a></h1>
+      <nav>
+        <a href="#menu">Meny</a>
+      </nav>
+    </header>
+
+    <!-- Meny -->
+    <nav id="menu">
+      <div class="inner">
+        <h2>Meny</h2>
+        <ul class="links">
+          <li><a href="index.html">Hem</a></li>
+          <li><a href="tjanster.html">Tjänster</a></li>
+          <li><a href="om-mig.html">Om mig</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+        <a href="#" class="close">Stäng</a>
+      </div>
+    </nav>
+
+    <!-- Tack-meddelande -->
+    <section id="thankyou">
+      <div class="inner">
+        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+          <circle cx="26" cy="26" r="25" />
+          <path fill="none" d="M14 27l7 7 16-16" />
+        </svg>
+        <h2>Tack för ditt meddelande!</h2>
+        <p>Vi har tagit emot ditt meddelande och återkommer så snart vi kan.</p>
+        <a href="index.html" class="button">Tillbaka till startsidan</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="inner">
+        <p>&copy; 2025 DC Digital Support & Säkerhet. Alla rättigheter förbehållna.</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- Meny-funktion -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const menu = document.getElementById("menu");
+      const openBtn = document.querySelector("#header nav a");
+      const closeBtn = document.querySelector("#menu .close");
+
+      openBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+        menu.classList.add("visible");
+      });
+
+      closeBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+        menu.classList.remove("visible");
+      });
+    });
+  </script>
+</body>
+</html>

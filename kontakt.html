@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <title>Kontakt – DC Digital Support & Säkerhet</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    nav a:hover { color: #ff6600; } /* Hover för länkar */
+    .button.primary { background:#ff6600; color:white; padding:0.7rem 1.5rem; border-radius:4px; text-decoration:none; display:inline-block; }
+  </style>
+</head>
+<body class="is-preload">
+  <div id="page-wrapper">
+
+    <!-- Header -->
+    <header id="header" class="alt">
+      <h1><a href="index.html">DC Digital Support & Säkerhet</a></h1>
+      <nav>
+        <a href="#menu">Meny</a>
+      </nav>
+    </header>
+
+    <!-- Meny -->
+    <nav id="menu">
+      <div class="inner">
+        <h2>Meny</h2>
+        <ul class="links">
+          <li><a href="index.html">Hem</a></li>
+          <li><a href="tjanster.html">Tjänster</a></li>
+          <li><a href="om-mig.html">Om mig</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+        <a href="#" class="close">Stäng</a>
+      </div>
+    </nav>
+
+    <!-- Kontaktsektion -->
+    <section id="wrapper" class="wrapper">
+      <div class="inner">
+        <h2 class="major">Kontakta oss</h2>
+        <p>Har du frågor eller vill boka en reparation? Fyll i formuläret så återkommer vi så snart vi kan.</p>
+
+        <!-- Kontaktformulär -->
+        <form method="POST" action="https://formsubmit.co/dc198206@gmail.com">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://dinwebbplats.se/tack.html">
+          
+          <div class="fields">
+            <div class="field">
+              <label for="name">Namn</label>
+              <input type="text" name="name" id="name" required />
+            </div>
+            <div class="field">
+              <label for="email">E-post</label>
+              <input type="email" name="email" id="email" required />
+            </div>
+            <div class="field">
+              <label for="message">Meddelande</label>
+              <textarea name="message" id="message" rows="4" required></textarea>
+            </div>
+          </div>
+          <ul class="actions">
+            <li><input type="submit" value="Skicka meddelande" class="button primary" /></li>
+          </ul>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="inner">
+        <p>&copy; 2025 DC Digital Support & Säkerhet. Alla rättigheter förbehållna.</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- Meny-funktion -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const menu = document.getElementById("menu");
+      const openBtn = document.querySelector("#header nav a");
+      const closeBtn = document.querySelector("#menu .close");
+
+      openBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+        menu.classList.add("visible");
+      });
+
+      closeBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+        menu.classList.remove("visible");
+      });
+    });
+  </script>
+</body>
+</html>
