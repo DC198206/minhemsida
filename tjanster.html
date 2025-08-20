@@ -6,21 +6,243 @@
   <title>DC Digital Support & Säkerhet | Tjänster</title>
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Modern CSS Enhancements -->
   <style>
-    nav a:hover { color: #ff6600; }
-    .button.primary {
-      background:#ff6600; color:white; padding:0.7rem 1.5rem; border-radius:4px;
-      text-decoration:none; display:inline-block; font-weight:bold; transition: background 0.3s;
+    :root {
+      --primary-color: #ff6b00;
+      --primary-dark: #e55e00;
+      --secondary-color: #4a6fa5;
+      --dark-bg: #1a1c27;
+      --light-text: #f8f9fa;
+      --accent-color: #00c2cb;
     }
-    .button.primary:hover { background:#e65c00; }
+    
+    /* Modern typography */
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      line-height: 1.6;
+    }
+    
+    /* Updated header styling */
+    #header {
+      background-color: rgba(26, 28, 39, 0.95);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      height: 4.5em;
+      padding: 0 2em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    #header h1 a {
+      color: var(--light-text);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      text-decoration: none;
+    }
+    
+    #header h1 a:hover {
+      color: var(--primary-color);
+    }
+    
+    /* Modern navigation */
+    #header nav a {
+      color: var(--light-text);
+      font-weight: 500;
+      transition: all 0.3s ease;
+      padding: 0.5em 1em;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+    
+    #header nav a:hover {
+      color: var(--primary-color);
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+    
+    /* Updated banner */
+    #banner {
+      padding: 8em 0 6em;
+      background: linear-gradient(135deg, rgba(26, 28, 39, 0.9) 0%, rgba(26, 28, 39, 0.7) 100%), url("images/bg.jpg");
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+    }
+    
+    #banner .inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    
+    #banner h2 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: var(--light-text);
+      letter-spacing: -0.03em;
+    }
+    
+    #banner p {
+      font-size: 1.2rem;
+      margin: 0 auto 2rem;
+      color: rgba(255, 255, 255, 0.85);
+      font-weight: 400;
+      letter-spacing: normal;
+    }
+    
+    /* Modern button styling */
+    .button.primary {
+      background: var(--primary-color);
+      color: white;
+      padding: 0.9rem 2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      display: inline-block;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: none;
+      box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    
+    .button.primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 107, 0, 0.4);
+    }
+    
+    .button.primary:active {
+      transform: translateY(0);
+    }
+    
+    /* Service cards */
+    .service-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .service-card {
+      background: #2a2d3d;
+      border-radius: 8px;
+      padding: 2rem;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+    
+    .service-card i {
+      font-size: 3rem;
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+    }
+    
+    .service-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--light-text);
+    }
+    
+    .service-card p {
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+    
+    /* Footer improvements */
+    #footer {
+      background-color: var(--dark-bg);
+      padding: 3em 0;
+    }
+    
+    #footer .inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 0 2rem;
+    }
+    
+    #footer p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+      margin: 0;
+    }
+    
+    /* Responsive improvements */
+    @media screen and (max-width: 980px) {
+      #banner {
+        padding: 6em 1.5em 4em;
+      }
+      
+      #banner h2 {
+        font-size: 2.2rem;
+      }
+      
+      .service-cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media screen and (max-width: 736px) {
+      #header {
+        height: auto;
+        padding: 1em;
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      #header nav {
+        margin-top: 1rem;
+      }
+      
+      #banner {
+        padding: 4em 1em 3em;
+      }
+      
+      #banner h2 {
+        font-size: 1.8rem;
+      }
+      
+      #banner p {
+        font-size: 1rem;
+      }
+      
+      .service-cards {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+      }
+    }
+    
+    /* Animation enhancements */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 <body class="is-preload">
   <div id="page-wrapper">
 
     <!-- Header -->
-    <header id="header" class="alt">
+    <header id="header">
       <h1><a href="index.html">DC Digital Support & Säkerhet</a></h1>
       <nav>
         <a href="#menu">Meny</a>
@@ -52,33 +274,31 @@
 
     <!-- Tjänster -->
     <section id="wrapper">
-      <section class="wrapper spotlight style1">
-        <div class="inner">
-          <h2 class="major">Datorreparation & Optimering</h2>
+      <div class="service-cards">
+        <div class="service-card animate-on-scroll">
+          <i class="fas fa-laptop"></i>
+          <h3>Datorreparation</h3>
           <p>Vi lagar och optimerar både stationära och bärbara datorer. Allt från trasiga skärmar och hårddiskar till virusproblem och långsam prestanda.</p>
         </div>
-      </section>
-
-      <section class="wrapper spotlight style2">
-        <div class="inner">
-          <h2 class="major">Mobilreparation & Support</h2>
+        
+        <div class="service-card animate-on-scroll">
+          <i class="fas fa-mobile-alt"></i>
+          <h3>Mobilreparation</h3>
           <p>Byte av skärm, batteri, laddkontakt samt felsökning av mjukvaruproblem. Vi reparerar både iPhone och Android.</p>
         </div>
-      </section>
-
-      <section class="wrapper spotlight style3">
-        <div class="inner">
-          <h2 class="major">IT-säkerhet & Föreläsningar</h2>
+        
+        <div class="service-card animate-on-scroll">
+          <i class="fas fa-shield-alt"></i>
+          <h3>IT-säkerhet</h3>
           <p>Vi erbjuder rådgivning och föreläsningar bland annat om hur man undviker nätbedrägerier och stärker sin digitala säkerhet.</p>
         </div>
-      </section>
-
-      <section class="wrapper alt style4">
-        <div class="inner">
-          <h2 class="major">Rådgivning & Uppgraderingar</h2>
+        
+        <div class="service-card animate-on-scroll">
+          <i class="fas fa-cogs"></i>
+          <h3>Uppgraderingar</h3>
           <p>Vi hjälper dig välja rätt komponenter och uppgraderingar för att förbättra din dator eller mobil.</p>
         </div>
-      </section>
+      </div>
     </section>
 
     <!-- Footer -->
@@ -98,9 +318,10 @@
   <script src="assets/js/util.js"></script>
   <script src="assets/js/main.js"></script>
 
-  <!-- Meny-funktion -->
+  <!-- Modern enhancements -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
+      // Menu functionality
       const menu = document.getElementById("menu");
       const openBtn = document.querySelector("#header nav a");
       const closeBtn = document.querySelector("#menu .close");
@@ -114,6 +335,30 @@
         e.preventDefault();
         menu.classList.remove("visible");
       });
+      
+      // Scroll animations
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+      
+      document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        observer.observe(el);
+      });
+      
+      // Remove preload class after a short delay
+      setTimeout(function() {
+        document.body.classList.remove('is-preload');
+      }, 100);
     });
   </script>
 </body>

@@ -6,18 +6,327 @@
   <title>DC Digital Support & Säkerhet | Om mig</title>
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Modern CSS Enhancements -->
   <style>
-    nav a:hover { color: #ff6600; }
-    .button.primary { background:#ff6600; color:white; padding:0.7rem 1.5rem; border-radius:4px; text-decoration:none; display:inline-block; }
-    .inner p { font-size: 1.1rem; line-height: 1.6; }
+    :root {
+      --primary-color: #ff6b00;
+      --primary-dark: #e55e00;
+      --secondary-color: #4a6fa5;
+      --dark-bg: #1a1c27;
+      --light-text: #f8f9fa;
+      --accent-color: #00c2cb;
+    }
+    
+    /* Modern typography */
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      line-height: 1.6;
+    }
+    
+    /* Updated header styling */
+    #header {
+      background-color: rgba(26, 28, 39, 0.95);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      height: 4.5em;
+      padding: 0 2em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    #header h1 a {
+      color: var(--light-text);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      text-decoration: none;
+    }
+    
+    #header h1 a:hover {
+      color: var(--primary-color);
+    }
+    
+    /* Modern navigation */
+    #header nav a {
+      color: var(--light-text);
+      font-weight: 500;
+      transition: all 0.3s ease;
+      padding: 0.5em 1em;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+    
+    #header nav a:hover {
+      color: var(--primary-color);
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+    
+    /* Updated banner */
+    #banner {
+      padding: 8em 0 6em;
+      background: linear-gradient(135deg, rgba(26, 28, 39, 0.9) 0%, rgba(26, 28, 39, 0.7) 100%), url("images/bg.jpg");
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+    }
+    
+    #banner .inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    
+    #banner h2 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: var(--light-text);
+      letter-spacing: -0.03em;
+    }
+    
+    #banner p {
+      font-size: 1.2rem;
+      margin: 0 auto 2rem;
+      color: rgba(255, 255, 255, 0.85);
+      font-weight: 400;
+      letter-spacing: normal;
+    }
+    
+    /* Modern button styling */
+    .button.primary {
+      background: var(--primary-color);
+      color: white;
+      padding: 0.9rem 2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      display: inline-block;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: none;
+      box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    
+    .button.primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 107, 0, 0.4);
+    }
+    
+    .button.primary:active {
+      transform: translateY(0);
+    }
+    
+    /* Profile section */
+    .profile-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    
+    .profile-image {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid var(--primary-color);
+      margin-bottom: 2rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .profile-content h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+      color: var(--light-text);
+    }
+    
+    .profile-content p {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.7;
+      max-width: 800px;
+      margin: 0 auto 1.5rem;
+    }
+    
+    /* Skills section */
+    .skills-section {
+      background-color: #2a2d3d;
+      padding: 4rem 2rem;
+      margin: 3rem 0;
+    }
+    
+    .skills-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .skills-container h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: var(--light-text);
+    }
+    
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    
+    .skill-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      padding: 2rem;
+      transition: transform 0.3s ease;
+    }
+    
+    .skill-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .skill-card i {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+    
+    .skill-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: var(--light-text);
+    }
+    
+    .skill-card p {
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.6;
+    }
+    
+    /* Values section */
+    .values-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    
+    .values-section h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: var(--light-text);
+    }
+    
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .value-item {
+      padding: 2rem;
+      border-radius: 8px;
+      background: rgba(74, 111, 165, 0.1);
+    }
+    
+    .value-item i {
+      font-size: 2rem;
+      color: var(--secondary-color);
+      margin-bottom: 1rem;
+    }
+    
+    .value-item h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: var(--light-text);
+    }
+    
+    .value-item p {
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.6;
+    }
+    
+    /* Footer improvements */
+    #footer {
+      background-color: var(--dark-bg);
+      padding: 3em 0;
+    }
+    
+    #footer .inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 0 2rem;
+    }
+    
+    #footer p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+      margin: 0;
+    }
+    
+    /* Responsive improvements */
+    @media screen and (max-width: 980px) {
+      .skills-grid, .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media screen and (max-width: 736px) {
+      #header {
+        height: auto;
+        padding: 1em;
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      #header nav {
+        margin-top: 1rem;
+      }
+      
+      #banner {
+        padding: 4em 1em 3em;
+      }
+      
+      #banner h2 {
+        font-size: 1.8rem;
+      }
+      
+      #banner p {
+        font-size: 1rem;
+      }
+      
+      .profile-container {
+        padding: 2rem 1rem;
+      }
+      
+      .skills-grid, .values-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* Animation enhancements */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 <body class="is-preload">
   <div id="page-wrapper">
 
     <!-- Header -->
-    <header id="header" class="alt">
+    <header id="header">
       <h1><a href="index.html">DC Digital Support & Säkerhet</a></h1>
       <nav>
         <a href="#menu">Meny</a>
@@ -31,7 +340,7 @@
         <ul class="links">
           <li><a href="index.html">Hem</a></li>
           <li><a href="tjanster.html">Tjänster</a></li>
-          <li><a href="ommig.html">Om mig</a></li>
+          <li><a href="om-mig.html">Om mig</a></li>
           <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
         <a href="#" class="close">Stäng</a>
@@ -48,29 +357,70 @@
 
     <!-- Om mig -->
     <section id="wrapper">
-
-      <section class="wrapper spotlight style1">
-        <div class="inner">
-          <h2 class="major" style="text-align:center;">Vem jag är</h2>
+      <div class="profile-container animate-on-scroll">
+        <img src="images/pic01.jpg" alt="Profilbild" class="profile-image">
+        <div class="profile-content">
+          <h2>Vem jag är</h2>
           <p>Jag har en utbildning i <strong>IT-forensik och informationssäkerhet</strong> från Högskolan i Halmstad och över 6 års yrkeserfarenhet inom IT-säkerhet. Mitt arbete har gett mig en djup förståelse för digitala hot, hur man förebygger dem och hur man hjälper människor att känna sig trygga i sin digitala vardag.</p>
-        </div>
-      </section>
-
-      <section class="wrapper spotlight style2">
-        <div class="inner">
-          <h2 class="major" style="text-align:center;">Praktisk erfarenhet</h2>
           <p>Jag har bred praktisk kunskap inom <strong>reparationer av datorer, mobiltelefoner och kringutrustning</strong>. Det innefattar allt från skärm- och batteribyten till felsökning av hårdvara och mjukvara, samt optimering av prestanda.</p>
-        </div>
-      </section>
-
-      <section class="wrapper alt style3">
-        <div class="inner" style="text-align:center;">
-          <h2 class="major">Min passion</h2>
           <p>Jag brinner för att göra teknik enkelt och tryggt för alla. Jag erbjuder även föreläsningar, bland annat om hur man kan undvika nätbedrägerier och öka sin digitala säkerhet.</p>
           <a href="kontakt.html" class="button primary">Kontakta mig</a>
         </div>
-      </section>
-
+      </div>
+      
+      <div class="skills-section">
+        <div class="skills-container animate-on-scroll">
+          <h2>Min kompetens</h2>
+          <div class="skills-grid">
+            <div class="skill-card">
+              <i class="fas fa-desktop"></i>
+              <h3>Datorreparation</h3>
+              <p>Expert på reparation av stationära och bärbara datorer, inklusive hårdvara och mjukvara.</p>
+            </div>
+            
+            <div class="skill-card">
+              <i class="fas fa-mobile-alt"></i>
+              <h3>Mobilreparation</h3>
+              <p>Erfarenhet av reparation av iPhone, Android och andra mobila enheter.</p>
+            </div>
+            
+            <div class="skill-card">
+              <i class="fas fa-shield-alt"></i>
+              <h3>IT-säkerhet</h3>
+              <p>Specialist inom informationssäkerhet och skydd mot cyberhot.</p>
+            </div>
+            
+            <div class="skill-card">
+              <i class="fas fa-chalkboard-teacher"></i>
+              <h3>Föreläsningar</h3>
+              <p>Erfarenhet av att hålla föreläsningar om IT-säkerhet för både privatpersoner och företag.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="values-section animate-on-scroll">
+        <h2>Mina värderingar</h2>
+        <div class="values-grid">
+          <div class="value-item">
+            <i class="fas fa-user-check"></i>
+            <h3>Kvalitet</h3>
+            <p>Jag står för hög kvalitet i alla mina arbetsuppgifter och strävar efter att leverera bästa möjliga resultat.</p>
+          </div>
+          
+          <div class="value-item">
+            <i class="fas fa-euro-sign"></i>
+            <h3>Rättvis Prissättning</h3>
+            <p>Transparent och rättvis prissättning utan dolda kostnader. Ni får alltid betala ett rimligt pris.</p>
+          </div>
+          
+          <div class="value-item">
+            <i class="fas fa-clock"></i>
+            <h3>Punktlighet</h3>
+            <p>Jag respekterar er tid och håller de tider vi kommit överens om.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
@@ -90,9 +440,10 @@
   <script src="assets/js/util.js"></script>
   <script src="assets/js/main.js"></script>
 
-  <!-- Meny-funktion -->
+  <!-- Modern enhancements -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
+      // Menu functionality
       const menu = document.getElementById("menu");
       const openBtn = document.querySelector("#header nav a");
       const closeBtn = document.querySelector("#menu .close");
@@ -106,6 +457,30 @@
         e.preventDefault();
         menu.classList.remove("visible");
       });
+      
+      // Scroll animations
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+      
+      document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        observer.observe(el);
+      });
+      
+      // Remove preload class after a short delay
+      setTimeout(function() {
+        document.body.classList.remove('is-preload');
+      }, 100);
     });
   </script>
 </body>

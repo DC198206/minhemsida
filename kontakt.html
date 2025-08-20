@@ -6,17 +6,300 @@
   <title>Kontakt – DC Digital Support & Säkerhet</title>
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Modern CSS Enhancements -->
   <style>
-    nav a:hover { color: #ff6600; } /* Hover för länkar */
-    .button.primary { background:#ff6600; color:white; padding:0.7rem 1.5rem; border-radius:4px; text-decoration:none; display:inline-block; }
+    :root {
+      --primary-color: #ff6b00;
+      --primary-dark: #e55e00;
+      --secondary-color: #4a6fa5;
+      --dark-bg: #1a1c27;
+      --light-text: #f8f9fa;
+      --accent-color: #00c2cb;
+    }
+    
+    /* Modern typography */
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      line-height: 1.6;
+    }
+    
+    /* Updated header styling */
+    #header {
+      background-color: rgba(26, 28, 39, 0.95);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      height: 4.5em;
+      padding: 0 2em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    #header h1 a {
+      color: var(--light-text);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      text-decoration: none;
+    }
+    
+    #header h1 a:hover {
+      color: var(--primary-color);
+    }
+    
+    /* Modern navigation */
+    #header nav a {
+      color: var(--light-text);
+      font-weight: 500;
+      transition: all 0.3s ease;
+      padding: 0.5em 1em;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+    
+    #header nav a:hover {
+      color: var(--primary-color);
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+    
+    /* Updated banner */
+    #banner {
+      padding: 8em 0 6em;
+      background: linear-gradient(135deg, rgba(26, 28, 39, 0.9) 0%, rgba(26, 28, 39, 0.7) 100%), url("images/bg.jpg");
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+    }
+    
+    #banner .inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    
+    #banner h2 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: var(--light-text);
+      letter-spacing: -0.03em;
+    }
+    
+    #banner p {
+      font-size: 1.2rem;
+      margin: 0 auto 2rem;
+      color: rgba(255, 255, 255, 0.85);
+      font-weight: 400;
+      letter-spacing: normal;
+    }
+    
+    /* Contact section */
+    .contact-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 3rem;
+    }
+    
+    .contact-info h2, .contact-form h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: var(--light-text);
+      padding-bottom: 0.5em;
+      border-bottom: 2px solid var(--primary-color);
+    }
+    
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    .contact-item {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .contact-item i {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      min-width: 30px;
+    }
+    
+    .contact-text h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.3rem;
+      color: var(--light-text);
+    }
+    
+    .contact-text p, .contact-text a {
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: none;
+    }
+    
+    .contact-text a:hover {
+      color: var(--primary-color);
+    }
+    
+    /* Form styling */
+    .contact-form {
+      background: #2a2d3d;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .field {
+      margin-bottom: 1.5rem;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--light-text);
+      font-weight: 500;
+    }
+    
+    input, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--light-text);
+      font-family: inherit;
+      font-size: 1rem;
+    }
+    
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 2px rgba(255, 107, 0, 0.2);
+    }
+    
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    /* Modern button styling */
+    .button.primary {
+      background: var(--primary-color);
+      color: white;
+      padding: 0.9rem 2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      display: inline-block;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: none;
+      box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    
+    .button.primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 107, 0, 0.4);
+    }
+    
+    .button.primary:active {
+      transform: translateY(0);
+    }
+    
+    /* Map section */
+    .map-section {
+      height: 400px;
+      margin-top: 3rem;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Footer improvements */
+    #footer {
+      background-color: var(--dark-bg);
+      padding: 3em 0;
+    }
+    
+    #footer .inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 0 2rem;
+    }
+    
+    #footer p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+      margin: 0;
+    }
+    
+    /* Responsive improvements */
+    @media screen and (max-width: 980px) {
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .map-section {
+        height: 300px;
+      }
+    }
+    
+    @media screen and (max-width: 736px) {
+      #header {
+        height: auto;
+        padding: 1em;
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      #header nav {
+        margin-top: 1rem;
+      }
+      
+      #banner {
+        padding: 4em 1em 3em;
+      }
+      
+      #banner h2 {
+        font-size: 1.8rem;
+      }
+      
+      #banner p {
+        font-size: 1rem;
+      }
+      
+      .contact-container {
+        padding: 2rem 1rem;
+      }
+      
+      .map-section {
+        height: 250px;
+      }
+    }
+    
+    /* Animation enhancements */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 <body class="is-preload">
   <div id="page-wrapper">
 
     <!-- Header -->
-    <header id="header" class="alt">
+    <header id="header">
       <h1><a href="index.html">DC Digital Support & Säkerhet</a></h1>
       <nav>
         <a href="#menu">Meny</a>
@@ -37,35 +320,85 @@
       </div>
     </nav>
 
-    <!-- Kontaktsektion -->
-    <section id="wrapper" class="wrapper">
+    <!-- Banner -->
+    <section id="banner">
       <div class="inner">
-        <h2 class="major">Kontakta oss</h2>
+        <h2>Kontakta oss</h2>
         <p>Har du frågor eller vill boka en reparation? Fyll i formuläret så återkommer vi så snart vi kan.</p>
+      </div>
+    </section>
 
-        <!-- Kontaktformulär -->
-        <form method="POST" action="https://formsubmit.co/dc198206@gmail.com">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://dinwebbplats.se/tack.html">
-          
-          <div class="fields">
+    <!-- Kontaktsektion -->
+    <section id="wrapper">
+      <div class="contact-container">
+        <div class="contact-info animate-on-scroll">
+          <h2>Kontaktuppgifter</h2>
+          <div class="contact-details">
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div class="contact-text">
+                <h3>Adress</h3>
+                <p>Halmstad, Sverige</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <div class="contact-text">
+                <h3>Telefon</h3>
+                <p>+46 123 456 789</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <div class="contact-text">
+                <h3>E-post</h3>
+                <p><a href="mailto:info@dcdigital.se">info@dcdigital.se</a></p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <i class="fas fa-clock"></i>
+              <div class="contact-text">
+                <h3>Öppettider</h3>
+                <p>Mån-Fre: 09:00-17:00</p>
+                <p>Lör: 10:00-14:00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact-form animate-on-scroll">
+          <h2>Skicka ett meddelande</h2>
+          <form method="POST" action="https://formsubmit.co/dc198206@gmail.com">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://dinwebbplats.se/tack.html">
+            
             <div class="field">
               <label for="name">Namn</label>
               <input type="text" name="name" id="name" required />
             </div>
+            
             <div class="field">
               <label for="email">E-post</label>
               <input type="email" name="email" id="email" required />
             </div>
+            
             <div class="field">
               <label for="message">Meddelande</label>
               <textarea name="message" id="message" rows="4" required></textarea>
             </div>
-          </div>
-          <ul class="actions">
-            <li><input type="submit" value="Skicka meddelande" class="button primary" /></li>
-          </ul>
-        </form>
+            
+            <ul class="actions">
+              <li><input type="submit" value="Skicka meddelande" class="button primary" /></li>
+            </ul>
+          </form>
+        </div>
+      </div>
+      
+      <div class="map-section animate-on-scroll">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d35667.916709999996!2d12.783333!3d56.666667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTbCsDM5JzYwLjAiTiAxMsKwNDYnNjAuMCJF!5e0!3m2!1sen!2sse!4v1620000000000!5m2!1sen!2sse" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
       </div>
     </section>
 
@@ -86,9 +419,10 @@
   <script src="assets/js/util.js"></script>
   <script src="assets/js/main.js"></script>
 
-  <!-- Meny-funktion -->
+  <!-- Modern enhancements -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
+      // Menu functionality
       const menu = document.getElementById("menu");
       const openBtn = document.querySelector("#header nav a");
       const closeBtn = document.querySelector("#menu .close");
@@ -102,6 +436,30 @@
         e.preventDefault();
         menu.classList.remove("visible");
       });
+      
+      // Scroll animations
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+      
+      document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        observer.observe(el);
+      });
+      
+      // Remove preload class after a short delay
+      setTimeout(function() {
+        document.body.classList.remove('is-preload');
+      }, 100);
     });
   </script>
 </body>
