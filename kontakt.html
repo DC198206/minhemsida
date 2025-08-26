@@ -17,7 +17,7 @@
     }
     
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
       line-height: 1.6;
       margin: 0;
       padding: 0;
@@ -57,7 +57,7 @@
       background-color: rgba(255, 255, 255, 0.05);
     }
 
-    /* Wrapper */
+    /* Wrapper med luft upptill */
     #wrapper {
       min-height: calc(100vh - 4.5em - 6em);
       display: flex;
@@ -91,6 +91,7 @@
 
     .field {
       margin-bottom: 1.2rem;
+      position: relative;
     }
 
     label {
@@ -121,11 +122,6 @@
       resize: vertical;
     }
 
-    .actions {
-      display: flex;
-      justify-content: center; /* 🔹 Centrera knappen */
-    }
-
     .button.primary {
       background: var(--primary-color);
       color: white;
@@ -143,6 +139,13 @@
       box-shadow: 0 6px 20px rgba(255, 107, 0, 0.4);
     }
 
+    /* Centrerar Skicka-knappen */
+    .actions {
+      display: flex;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+
     /* Footer */
     #footer {
       background-color: var(--dark-bg);
@@ -156,6 +159,19 @@
       margin: 0;
     }
 
+    /* Mobilanpassning */
+    @media screen and (max-width: 600px) {
+      #wrapper {
+        padding: 2rem 1rem;
+      }
+      .contact-form {
+        padding: 1.5rem;
+      }
+      .contact-form h2 {
+        font-size: 1.5rem;
+      }
+    }
+
     /* Meny */
     #menu {
       position: fixed;
@@ -165,7 +181,7 @@
       height: 100%;
       background: #1a1c27;
       transition: right 0.3s ease;
-      z-index: 1001;
+      z-index: 1000;
       padding: 2rem;
     }
 
@@ -200,25 +216,6 @@
       text-decoration: none;
       font-size: 1.2rem;
     }
-
-    /* Overlay (klick utanför) */
-    #overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s ease;
-      z-index: 1000;
-    }
-
-    #overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
   </style>
 </head>
 <body class="is-preload">
@@ -227,7 +224,7 @@
     <!-- Header -->
     <header id="header">
       <h1><a href="index.html">DC Digital Support & Säkerhet</a></h1>
-      <nav><a href="#menu" id="menuToggle">Meny</a></nav>
+      <nav><a href="#menu">Meny</a></nav>
     </header>
 
     <!-- Meny -->
@@ -242,9 +239,6 @@
         </ul>
       </div>
     </nav>
-
-    <!-- Overlay -->
-    <div id="overlay"></div>
 
     <!-- Kontaktsektion -->
     <section id="wrapper">
@@ -272,9 +266,9 @@
               <textarea name="message" id="message" rows="4" required></textarea>
             </div>
 
-            <ul class="actions">
-              <li><input type="submit" value="Skicka meddelande" class="button primary" /></li>
-            </ul>
+            <div class="actions">
+              <input type="submit" value="Skicka meddelande" class="button primary" />
+            </div>
           </form>
         </div>
       </div>
@@ -293,29 +287,20 @@
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const menu = document.getElementById('menu');
-      const menuToggle = document.getElementById('menuToggle');
-      const menuLinks = document.querySelectorAll('#menu .links a');
-      const overlay = document.getElementById('overlay');
+      const menuToggle = document.querySelector('#header nav a');
 
       // Öppna meny
       menuToggle.addEventListener('click', (e) => {
         e.preventDefault();
         menu.classList.add('active');
-        overlay.classList.add('active');
       });
 
-      // Stäng meny när man klickar på en länk
+      // Stäng meny när man klickar på en länk + navigera
+      const menuLinks = document.querySelectorAll('#menu .links a');
       menuLinks.forEach(link => {
         link.addEventListener('click', () => {
           menu.classList.remove('active');
-          overlay.classList.remove('active');
         });
-      });
-
-      // Stäng meny när man klickar på overlay
-      overlay.addEventListener('click', () => {
-        menu.classList.remove('active');
-        overlay.classList.remove('active');
       });
     });
   </script>
