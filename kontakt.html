@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
-    /* Kontaktformulär centrering */
+    /* Centrera kontaktformulär och etiketter */
     .contact-container {
       display: flex;
       flex-direction: column;
@@ -26,13 +26,13 @@
       border-radius: 10px;
       box-shadow: 0 5px 20px rgba(0,0,0,0.25);
       text-align: center; /* Centrerar etiketter och knapp */
+      font-family: inherit; /* Samma font som resten av sidan */
+      color: var(--light-text);
     }
 
     .contact-form label {
       display: block;
       margin-bottom: 0.5rem;
-      font-weight: 500;
-      color: var(--light-text);
       text-align: center;
     }
 
@@ -50,7 +50,7 @@
 
     .contact-form .actions {
       display: flex;
-      justify-content: center;
+      justify-content: center; /* Centrerar knappen */
       margin-top: 1rem;
     }
   </style>
@@ -133,7 +133,7 @@
   <script src="assets/js/util.js"></script>
   <script src="assets/js/main.js"></script>
 
-  <!-- Menyfunktion exakt som startsidan -->
+  <!-- Menyfunktion exakt som på startsidan -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const menu = document.getElementById("menu");
