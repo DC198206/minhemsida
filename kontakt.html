@@ -211,3 +211,368 @@
   </script>
 </body>
 </html>
+✅ Detta gör att:
+
+Texten använder samma font (Inter).
+
+Knappen Skicka meddelande blir orange, rundad och med hover-effekt (samma som "Kontakta mig"-knappen på Om mig).
+
+Alla etiketter ("Namn", "E-post", osv.) är centrerade ovanför rutorna.
+
+Formuläret är snyggt centrerat på sidan.
+
+Vill du att jag även lägger till samma scroll-animationer (animate-on-scroll) på formuläret som du har på andra sidor?
+
+
+
+
+
+
+
+Du sade:
+sidan blir ju inte som du beskrev
+
+
+ChatGPT sade:
+
+Tänkte i 45s
+Got it — här är en komplett kontakt.html som använder samma stil och typsnitt som din om-mig.html, orange knapp, centrerade etiketter och knapp, och meny som fungerar identiskt (samma JS som i din om-mig.html).
+
+Kopiera in detta som hela filen:
+
+html
+Kopiera kod
+<!DOCTYPE HTML>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <title>DC Digital Support & Säkerhet | Kontakt</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Samma stil som om-mig.html -->
+  <style>
+    :root {
+      --primary-color: #ff6b00;
+      --primary-dark: #e55e00;
+      --secondary-color: #4a6fa5;
+      --dark-bg: #1a1c27;
+      --light-text: #f8f9fa;
+      --accent-color: #00c2cb;
+    }
+    
+    /* Modern typography */
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      line-height: 1.6;
+    }
+    
+    /* Header (samma som på om-mig/index) */
+    #header {
+      background-color: rgba(26, 28, 39, 0.95);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      height: 4.5em;
+      padding: 0 2em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    #header h1 a {
+      color: var(--light-text);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      text-decoration: none;
+    }
+    
+    #header h1 a:hover {
+      color: var(--primary-color);
+    }
+    
+    /* Navigation */
+    #header nav a {
+      color: var(--light-text);
+      font-weight: 500;
+      transition: all 0.3s ease;
+      padding: 0.5em 1em;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+    
+    #header nav a:hover {
+      color: var(--primary-color);
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+    
+    /* Banner (samma look) */
+    #banner {
+      padding: 8em 0 6em;
+      background: linear-gradient(135deg, rgba(26, 28, 39, 0.9) 0%, rgba(26, 28, 39, 0.7) 100%), url("images/bg.jpg");
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+    }
+    
+    #banner .inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    
+    #banner h2 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: var(--light-text);
+      letter-spacing: -0.03em;
+    }
+    
+    #banner p {
+      font-size: 1.2rem;
+      margin: 0 auto 2rem;
+      color: rgba(255, 255, 255, 0.85);
+      font-weight: 400;
+    }
+
+    /* Orange knapp – exakt som övriga sidor */
+    .button.primary {
+      background: var(--primary-color);
+      color: white;
+      padding: 0.9rem 2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      display: inline-block;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: none;
+      box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    
+    .button.primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 107, 0, 0.4);
+    }
+    .button.primary:active { transform: translateY(0); }
+
+    /* Kontaktformulär – centrerade etiketter & knapp, men behåller färger/typografi */
+    .contact-wrap {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .contact-card {
+      background-color: #2a2d3d;
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .contact-card h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: var(--light-text);
+      text-align: center;
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: 0.5rem;
+    }
+
+    .contact-form .field {
+      margin-bottom: 1.25rem;
+    }
+
+    .contact-form label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--light-text);
+      text-align: center;                 /* ← centrera rubrikerna */
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 8px;
+      background: rgba(255,255,255,0.05);
+      color: var(--light-text);
+      font-size: 1rem;
+      font-family: inherit;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(255,107,0,0.3);
+    }
+
+    .contact-form textarea { min-height: 150px; resize: vertical; }
+
+    .contact-form .actions {
+      display: flex;
+      justify-content: center;           /* ← centrera knappen */
+      margin-top: 1rem;
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+    }
+
+    /* Footer */
+    #footer {
+      background-color: var(--dark-bg);
+      padding: 3em 0;
+    }
+    #footer .inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 0 2rem;
+    }
+    #footer p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    /* Små förbättringar för mobil */
+    @media screen and (max-width: 736px) {
+      #header {
+        height: auto;
+        padding: 1em;
+        flex-direction: column;
+        text-align: center;
+      }
+      #header nav { margin-top: 1rem; }
+      #banner { padding: 4em 1em 3em; }
+      #banner h2 { font-size: 1.8rem; }
+      #banner p { font-size: 1rem; }
+      .contact-card { padding: 1.5rem; }
+    }
+
+    /* Om ditt main.css inte hanterar menyns slide in, säkerställ detta: */
+    #menu { transform: translateX(100%); transition: transform .3s ease; }
+    #menu.visible { transform: translateX(0); }
+  </style>
+</head>
+<body class="is-preload">
+  <div id="page-wrapper">
+
+    <!-- Header -->
+    <header id="header">
+      <h1><a href="index.html">DC Digital Support & Säkerhet</a></h1>
+      <nav><a href="#menu">Meny</a></nav>
+    </header>
+
+    <!-- Meny -->
+    <nav id="menu">
+      <div class="inner">
+        <h2>Meny</h2>
+        <ul class="links">
+          <li><a href="index.html">Hem</a></li>
+          <li><a href="tjanster.html">Tjänster</a></li>
+          <li><a href="om-mig.html">Om mig</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+        <a href="#" class="close">Stäng</a>
+      </div>
+    </nav>
+
+    <!-- Banner -->
+    <section id="banner">
+      <div class="inner">
+        <h2>Kontakt</h2>
+        <p>Fyll i formuläret nedan så återkommer jag så snart jag kan.</p>
+      </div>
+    </section>
+
+    <!-- Kontaktformulär -->
+    <section id="wrapper">
+      <div class="contact-wrap">
+        <div class="contact-card">
+          <h2>Skicka ett meddelande</h2>
+          <form class="contact-form" method="POST" action="https://formsubmit.co/dc198206@gmail.com">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://dinwebbplats.se/tack.html">
+            <input type="hidden" name="_subject" value="Nytt meddelande från kontaktsidan">
+            <input type="text" name="_honey" style="display:none">
+
+            <div class="field">
+              <label for="name">Namn</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="field">
+              <label for="email">E-post</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="field">
+              <label for="message">Meddelande</label>
+              <textarea id="message" name="message" rows="6" required></textarea>
+            </div>
+
+            <ul class="actions">
+              <li><input type="submit" value="Skicka meddelande" class="button primary"></li>
+            </ul>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="inner">
+        <p>&copy; 2025 DC Digital Support & Säkerhet. Alla rättigheter förbehållna.</p>       
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Scripts (samma som på om-mig) -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- Meny + animationer (identisk logik som om-mig/index) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Meny
+      const menu = document.getElementById("menu");
+      const openBtn = document.querySelector("#header nav a");
+      const closeBtn = document.querySelector("#menu .close");
+
+      openBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+        menu.classList.add("visible");
+      });
+
+      closeBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+        menu.classList.remove("visible");
+      });
+
+      // Scroll animations (valfritt – lämnas på plats för likadant beteende)
+      const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      }, observerOptions);
+      document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+      // Ta bort preload-klass
+      setTimeout(function() { document.body.classList.remove('is-preload'); }, 100);
+    });
+  </script>
+</body>
+</html>
