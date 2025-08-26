@@ -9,24 +9,23 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
-    /* Centrera formuläret och innehållet */
+    /* Kontaktformulär centrering */
     .contact-container {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      width: 100%;
       max-width: 500px;
       margin: 2rem auto;
     }
 
     .contact-form {
+      width: 100%;
       background: #2a2d3d;
       padding: 2rem;
       border-radius: 10px;
       box-shadow: 0 5px 20px rgba(0,0,0,0.25);
-      width: 100%;
-      text-align: center; /* Centrerar texten och labels */
+      text-align: center; /* Centrerar etiketter och knapp */
     }
 
     .contact-form label {
@@ -34,7 +33,7 @@
       margin-bottom: 0.5rem;
       font-weight: 500;
       color: var(--light-text);
-      text-align: center; /* Centrerar texten */
+      text-align: center;
     }
 
     .contact-form input,
@@ -49,7 +48,6 @@
       margin-bottom: 1rem;
     }
 
-    /* Centrera knappen */
     .contact-form .actions {
       display: flex;
       justify-content: center;
@@ -135,7 +133,7 @@
   <script src="assets/js/util.js"></script>
   <script src="assets/js/main.js"></script>
 
-  <!-- Menyfunktion som på startsidan -->
+  <!-- Menyfunktion exakt som startsidan -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const menu = document.getElementById("menu");
