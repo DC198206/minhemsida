@@ -9,10 +9,51 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
-    /* Centrera formulärknappen */
-    form .actions {
+    /* Centrera formuläret och innehållet */
+    .contact-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 500px;
+      margin: 2rem auto;
+    }
+
+    .contact-form {
+      background: #2a2d3d;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+      width: 100%;
+      text-align: center; /* Centrerar texten och labels */
+    }
+
+    .contact-form label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: var(--light-text);
+      text-align: center; /* Centrerar texten */
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.08);
+      color: var(--light-text);
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Centrera knappen */
+    .contact-form .actions {
       display: flex;
       justify-content: center;
+      margin-top: 1rem;
     }
   </style>
 </head>
@@ -51,38 +92,36 @@
 
     <!-- Kontaktformulär -->
     <section id="wrapper">
-      <section class="wrapper spotlight style1">
-        <div class="inner">
-          <div class="content">
-            <h2 class="major">Skicka ett meddelande</h2>
-            <form method="post" action="#">
-              <div class="fields">
-                <div class="field half">
-                  <label for="name">Namn</label>
-                  <input type="text" name="name" id="name" required />
-                </div>
-                <div class="field half">
-                  <label for="email">E-post</label>
-                  <input type="email" name="email" id="email" required />
-                </div>
-                <div class="field">
-                  <label for="message">Meddelande</label>
-                  <textarea name="message" id="message" rows="6" required></textarea>
-                </div>
-              </div>
-              <ul class="actions">
-                <li><input type="submit" value="Skicka Meddelande" class="primary" /></li>
-              </ul>
-            </form>
-          </div>
+      <div class="contact-container">
+        <div class="contact-form">
+          <h2>Skicka ett meddelande</h2>
+          <form method="POST" action="https://formsubmit.co/dc198206@gmail.com">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://dinwebbplats.se/tack.html">
+            <input type="hidden" name="_subject" value="Nytt meddelande från kontaktsidan">
+            <input type="text" name="_honey" style="display:none">
+
+            <label for="name">Namn</label>
+            <input type="text" name="name" id="name" required />
+
+            <label for="email">E-post</label>
+            <input type="email" name="email" id="email" required />
+
+            <label for="message">Meddelande</label>
+            <textarea name="message" id="message" rows="6" required></textarea>
+
+            <ul class="actions">
+              <li><input type="submit" value="Skicka Meddelande" class="button primary" /></li>
+            </ul>
+          </form>
         </div>
-      </section>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer id="footer">
       <div class="inner">
-        <p>&copy; 2025 DC Digital Support & Säkerhet. Alla rättigheter förbehållna.</p>       
+        <p>&copy; 2025 DC Digital Support & Säkerhet. Alla rättigheter förbehållna.</p>
       </div>
     </footer>
 
@@ -96,7 +135,7 @@
   <script src="assets/js/util.js"></script>
   <script src="assets/js/main.js"></script>
 
-  <!-- Samma menylogik som startsidan -->
+  <!-- Menyfunktion som på startsidan -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const menu = document.getElementById("menu");
