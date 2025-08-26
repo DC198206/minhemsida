@@ -139,7 +139,7 @@
       box-shadow: 0 6px 20px rgba(255, 107, 0, 0.4);
     }
 
-    /* Centrerar Skicka-knappen */
+    /* Centrerar knappen */
     .actions {
       display: flex;
       justify-content: center;
@@ -175,18 +175,20 @@
     /* Meny */
     #menu {
       position: fixed;
-      right: -100%;
       top: 0;
+      right: 0;
       width: 70%;
+      max-width: 300px;
       height: 100%;
       background: #1a1c27;
-      transition: right 0.3s ease;
-      z-index: 1000;
+      transform: translateX(100%); /* gömd */
+      transition: transform 0.3s ease;
+      z-index: 1002;
       padding: 2rem;
     }
 
     #menu.active {
-      right: 0;
+      transform: translateX(0); /* synlig */
     }
 
     #menu .inner {
@@ -224,7 +226,7 @@
     <!-- Header -->
     <header id="header">
       <h1><a href="index.html">DC Digital Support & Säkerhet</a></h1>
-      <nav><a href="#menu">Meny</a></nav>
+      <nav><a href="#menu" id="menuToggle">Meny</a></nav>
     </header>
 
     <!-- Meny -->
@@ -285,22 +287,20 @@
 
   <!-- Meny-script -->
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const menu = document.getElementById('menu');
-      const menuToggle = document.querySelector('#header nav a');
+    const menu = document.getElementById('menu');
+    const menuToggle = document.getElementById('menuToggle');
+    const menuLinks = document.querySelectorAll('#menu .links a');
 
-      // Öppna meny
-      menuToggle.addEventListener('click', (e) => {
-        e.preventDefault();
-        menu.classList.add('active');
-      });
+    // Öppna meny
+    menuToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      menu.classList.toggle('active');
+    });
 
-      // Stäng meny när man klickar på en länk + navigera
-      const menuLinks = document.querySelectorAll('#menu .links a');
-      menuLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          menu.classList.remove('active');
-        });
+    // Stäng meny när man klickar på en länk
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('active');
       });
     });
   </script>
