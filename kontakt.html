@@ -12,6 +12,7 @@
     :root {
       --primary-color: #ff6b00;
       --primary-dark: #e55e00;
+      --secondary-color: #4a6fa5;
       --light-text: #f8f9fa;
       --dark-bg: #1a1c27;
     }
@@ -43,7 +44,7 @@
       color: rgba(255, 255, 255, 0.85);
     }
 
-    /* Formulär */
+    /* Kontaktformulär */
     .contact-section {
       max-width: 800px;
       margin: 3rem auto;
@@ -121,6 +122,47 @@
 
     .button.primary:active {
       transform: translateY(0);
+    }
+
+    /* Footer */
+    #footer {
+      background-color: var(--dark-bg);
+      padding: 3em 0;
+    }
+
+    #footer .inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 0 2rem;
+    }
+
+    #footer p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem; /* Samma som index.html */
+      margin: 0;
+    }
+
+    /* Responsivitet */
+    @media screen and (max-width: 736px) {
+      #header {
+        height: auto;
+        padding: 1em;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      #header nav {
+        margin-top: 1rem;
+      }
+
+      #banner {
+        padding: 4em 1em 3em;
+      }
+
+      #banner h2 {
+        font-size: 1.8rem;
+      }
     }
   </style>
 </head>
@@ -214,4 +256,3 @@
   </script>
 </body>
 </html>
-
