@@ -99,13 +99,17 @@ body {
   padding: 0.9rem 2rem;
   border-radius: 30px;
   text-decoration: none;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-weight: 600;
   transition: all 0.3s ease;
   border: none;
   box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
   cursor: pointer;
   font-size: 1rem;
+  text-align: center;
+  line-height: 1.5;
 }
 
 .button.primary:hover {
